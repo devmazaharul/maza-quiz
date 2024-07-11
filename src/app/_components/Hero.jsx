@@ -12,7 +12,7 @@ export default function Hero() {
   <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
     <div className="mx-auto max-w-3xl text-center">
       <h1
-        className="bg-gradient-to-r from-pink-300 via-blue-500 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl"
+        className="bg-gradient-to-r from-emerald-300 via-blue-500 to-green-800 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl"
       >
         Understand User Flow.
 
@@ -24,12 +24,12 @@ export default function Hero() {
         numquam ea!
       </p>
 
-      <div className="mt-8 flex flex-wrap justify-center gap-4">
+      <div className="mt-8 flex  flex-wrap justify-center gap-4">
         <Link
-          className="  w-full rounded border border-pink-600 bg-pink-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white  active:text-opacity-75 sm:w-auto"
-          href="#"
+          className="  w-fit  rounded border border-emerald-600 bg-emerald-500 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white  active:text-opacity-75 sm:w-auto"
+          href="/test"
         >
-          Get Started
+          Get Test
         </Link>
 
      

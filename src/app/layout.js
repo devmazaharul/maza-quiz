@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-gray-900 text-gray-200`}>
         <Usercontext.Provider value={{isDark,setisDark}}>
         <Header/>
 {children}

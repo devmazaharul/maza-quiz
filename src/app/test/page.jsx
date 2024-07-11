@@ -1,11 +1,41 @@
-import React from 'react'
-import { fethcData } from '../action'
-export default async function page() {
- const user_data=await fethcData()
 
+import { Anek_Bangla } from "next/font/google";
+import { fethcData } from "../action";
+const tiroBangla = Anek_Bangla({
+  style: "normal",
+  weight: ["400"],
+  subsets: ["bengali"],
+});
+
+import Testform from "./Testform";
+
+
+export default async function page() {
+
+  const user_data = await fethcData();
+const questionOpt=["  sum ভ্যারিয়েবলটি অবশ্যই named export করতে হবে।1 ","  sum ভ্যারিয়েবলটি অবশ্যই named export করতে হবে।2 ","  sum ভ্যারিয়েবলটি অবশ্যই named export করতে হবে।3 ","  sum ভ্যারিয়েবলটি অবশ্যই named export করতে হবে। 4"]
   return (
-    <div>{user_data.data.map((item)=>(
-<p key={Math.random()}>{item.address}</p>
-    ))}</div>
-  )
+    <>
+
+      <div className={`${tiroBangla.className}  text-gray-400`}>
+    <div className={` text-center py-6  text-gray-400`}>
+          <h1 className="text-3xl px-2 font-semibold">
+            আপনার 
+            <p className="text-emerald-500 px-2 text-3xl inline-block">
+              স্কিল টেস্ট
+            </p>
+            করুন
+          </h1>
+          <p>
+            কোর্সটি করার জন্য প্রয়োজনীয় বিষয়গুলো সম্পর্কে আপনার যথেষ্ট ধারণা আছে
+            কিনা সেটি যাচাই করে নিন
+          </p>
+        </div>
+
+       <Testform questionOpt={questionOpt} testData={user_data}/>
+
+
+      </div>
+    </>
+  );
 }
