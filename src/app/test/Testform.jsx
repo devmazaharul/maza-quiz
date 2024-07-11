@@ -13,7 +13,7 @@ export default async function Testform() {
   return (
     <>
       {user_data.data.map((item,i) => (
-       <div className="text-gray-400 rounded-md  m-4 border border-gray-700 w-[94%] mx-auto md:w-[80%]">
+       <div key={Math.random()} className="text-gray-400 rounded-md  m-4 border border-gray-700 w-[94%] mx-auto md:w-[80%]">
   <p className="text-center font-semibold text-emerald-600 rounded-md bg-slate-800 p-2"> {i+1}</p>
          <div
           key={Math.random()}
