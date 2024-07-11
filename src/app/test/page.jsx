@@ -1,6 +1,5 @@
-
 import { Anek_Bangla } from "next/font/google";
-import { fethcData } from "../action";
+
 const tiroBangla = Anek_Bangla({
   style: "normal",
   weight: ["400"],
@@ -12,8 +11,8 @@ import Testform from "./Testform";
 
 export default async function page() {
 
-  const user_data = await fethcData();
-const questionOpt=["  sum ভ্যারিয়েবলটি অবশ্যই named export করতে হবে।1 ","  sum ভ্যারিয়েবলটি অবশ্যই named export করতে হবে।2 ","  sum ভ্যারিয়েবলটি অবশ্যই named export করতে হবে।3 ","  sum ভ্যারিয়েবলটি অবশ্যই named export করতে হবে। 4"]
+
+
   return (
     <>
 
@@ -32,7 +31,7 @@ const questionOpt=["  sum ভ্যারিয়েবলটি অবশ্য�
           </p>
         </div>
 
-       <Testform questionOpt={questionOpt} testData={user_data}/>
+       <Testform />
 
 
       </div>
