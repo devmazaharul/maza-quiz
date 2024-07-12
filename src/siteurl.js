@@ -1,1 +1,1 @@
-export const site_url="http://localhost:3000/api/"
+export const site_url="https://quiz-zeta-green.vercel.app/api/"
