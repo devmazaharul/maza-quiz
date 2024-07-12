@@ -1,5 +1,4 @@
 "use client"
-
 import Link from 'next/link'
 import { MdNightlightRound } from "react-icons/md";
 import { MdOutlineLightMode } from "react-icons/md";
@@ -35,6 +34,9 @@ export default function Header() {
 
             <li>
               <Link className="text-gray-200 transition hover:text-gray-200/75" href="/result"> Result </Link>
+            </li>
+            <li>
+              <Link className="text-gray-200 transition hover:text-gray-200/75" href="/admin"> Admin </Link>
             </li>
 
             <li>

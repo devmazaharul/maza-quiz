@@ -1,6 +1,7 @@
+import {  fethcData } from "@/app/action";
+
 import { Anek_Bangla } from "next/font/google";
 import { FaRegCircleQuestion } from "react-icons/fa6";
-import { fethcData } from "../action";
 
 const tiroBangla = Anek_Bangla({
   style: "normal",
@@ -9,12 +10,10 @@ const tiroBangla = Anek_Bangla({
 });
 
 
-
-
 export default async function page() {
-  const UserData = await fethcData()
-const {data}=await UserData;
 
+  const UserData = await fethcData()
+const {data}=UserData;
 
   return (
     <>
@@ -37,7 +36,7 @@ const {data}=await UserData;
 
         {data && data.map((item,i) => (
        <div key={i} className="text-gray-400 rounded-md  m-4 border border-gray-700 w-[94%] mx-auto md:w-[80%]">
-  <p className="text-center font-semibold text-emerald-600 rounded-md bg-slate-800 p-2"> {i+1}</p>
+  <p className="text-center font-semibold text-emerald-600 rounded-t-md bg-slate-800 p-2"> {i+1}</p>
          <div
           
           className=" my-6  px-4  shadow-md shadow-gray-900"
