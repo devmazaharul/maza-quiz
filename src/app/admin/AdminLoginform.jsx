@@ -1,14 +1,16 @@
 "use client";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { FiSend } from "react-icons/fi";
 import { MdOutlineMarkEmailRead } from "react-icons/md";
 import { useRouter } from "next/navigation";
+import { Usercontext } from "../contex/Contextapi";
 
 export function AdminLoginform() {
 
 
 
+  const {isDark,setisDark}=useContext(Usercontext)
 
 
 const router=useRouter()
@@ -68,7 +70,7 @@ const handlesubmit=async(e)=>{
     setOtpval("")
     router.push("/dashboard")
 
-  
+
    }else if(mailapi.status==201){
     toast.error(jsCon.message)
     setLoading(false)
@@ -76,8 +78,9 @@ const handlesubmit=async(e)=>{
     toast.error(jsCon.message)
     setLoading(false)
    }else if(mailapi.status==203){
-    toast.error(jsCon.message)
+     toast.error(jsCon.message)
     setLoading(false)
+   
    }
   }else{
     setLoading(false)
@@ -88,14 +91,15 @@ const handlesubmit=async(e)=>{
 
   return (
     <>
-      <h1 className="text-center  font-semibold text-lg ">Admin login </h1>
+  <div className="mt-14">
+  <h1 className={`${isDark?"text-center text-gray-200  font-semibold text-lg":"text-center text-gray-800 py-6 font-semibold text-lg"}`}>Admin login </h1>
       {otp ? (
-      <form onSubmit={handlesubmit} className="md:w-[30%] py-8  p-4 text-white rounded-md border-gray-700 mx-auto mt-6 bg-gray-800 border shadow-md ">
+      <form onSubmit={handlesubmit} className={`md:w-[30%] w-[95%] py-8  p-4 text-white rounded-md  mx-auto  ${isDark?"bg-gray-800 border-gray-700":"bg-gray-100 border-gray-300"} border shadow-md "`}>
           <input
-            type="text"
+            type="tel"
             placeholder="Enter OTP"
             maxLength={5}
-            className="bg-gray-700 my-3  outline-none text-gray-200 px-3 py-2 w-full rounded-md "
+            className={`{${isDark?"bg-gray-700 text-gray-200":"bg-gray-100 border text-gray-700 border-gray-400"}}  my-3 outline-none  px-3 py-2 w-full rounded-md `}
             value={otpval}
             onChange={(e)=>setOtpval(e.target.value)}
           />
@@ -119,6 +123,7 @@ const handlesubmit=async(e)=>{
      </button>
    ):""}
 
+  </div>
 
     </>
   );

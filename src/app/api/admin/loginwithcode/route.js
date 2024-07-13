@@ -18,10 +18,10 @@ export const POST=async(req)=>{
             cookies().set({name:"mazaharul",value:"maza123"})
             return NextResponse.json({message:"Successfully login",},{status:200})
            }else{
-            return NextResponse.json({message:"Something went wrong",},{status:202})
+            return NextResponse.json({message:"Please try again later",},{status:202})
            }
            }else{
-            return NextResponse.json({message:"No user found",},{status:203})
+            return NextResponse.json({message:"Invalid OTP",},{status:203})
            }
         }else{
             return NextResponse.json({message:"Code must be 5 digit",},{status:201})
@@ -30,6 +30,6 @@ export const POST=async(req)=>{
    
      
     } catch (error) {
-        return NextResponse.json({message:"server error",},{status:500})
+        return NextResponse.json({message:"Connection error",},{status:500})
     }
 }
