@@ -1,1 +1,1 @@
-export const site_url="https://quiz-zeta-green.vercel.app/api/"
+export const site_url="https://maza-quiz.vercel.app/api/"
