@@ -1,28 +1,16 @@
-import { cookies } from 'next/headers'
-import { redirect } from 'next/navigation'
 import React from 'react'
-import { getAdmindetails } from '../action/admin'
+import { fethcadminData } from '../action'
 
-export default function page() {
-
-  const cruser=async()=>{
-  
-    if(!cookies().get("token")){
-      redirect("/admin")
-    }else{
-     const res= await getAdmindetails()
-     return res
-     
-    } 
-  }
-
-const crstatus=cruser()
+export default async function page() {
+  const getAdmin=await fethcadminData()
+const {data,message}=getAdmin
 
   return (
     <div>
-
-      <h1>details - {crstatus}</h1>
-
+      <h1>{data.name}</h1>
+      <h1>{data.email}</h1>
+      <h1>{data.id}</h1>
+      <h1>{data.lastLogin}</h1>
     </div>
   )
 }

@@ -1,4 +1,5 @@
 import { site_url } from "@/siteurl"
+import { cookies } from "next/headers"
 
 export  const fethcData=async()=>{
     try {
@@ -13,4 +14,25 @@ export  const fethcData=async()=>{
         return "Some thing went wrong"
     }
 }  
+export  const fethcadminData=async()=>{
+    try {
+        const token=cookies().get("token")
+   
+        const fetchApi=await fetch(site_url+"admin/getadmindata",{
+            cache:"no-store",
+            method:"POST",
+            headers:{
+                "Content-type":"application/json"
+            },
+            body:JSON.stringify({token_code:token.value})
+        })
+        const jsCon=await fetchApi.json()
+
+        return jsCon
+    } catch (error) {
+        return error
+    }
+}  
+
+
 

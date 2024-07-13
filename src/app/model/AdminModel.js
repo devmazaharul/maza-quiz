@@ -18,7 +18,7 @@ const AdminloginSchima=mongoose.Schema({
         type:String
     },
     lastLogin:{
-        type:Date,
+        type:String,
         require:true
     }
 })

@@ -7,7 +7,7 @@ import { redirect } from 'next/navigation'
 export default function page() {
 
 const getCookie=()=>{
-  if(cookies().get("mazaharul")){
+  if(cookies().get("token")){
     redirect("/dashboard")
   }
 

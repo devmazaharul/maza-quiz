@@ -1,17 +1,13 @@
-import React from 'react'
+
+import { redirect } from 'next/navigation'
 import Navbar from './Navbar'
 import { cookies } from 'next/headers'
 
 export default function layout({children}) {
 
-  const cruser=async()=>{
-  
-    if(!cookies().get("token")){
-      redirect("/admin")
-    }
+  if(!cookies().get("token")){
+    redirect("/admin")
   }
-
-cruser()
 
 
   return (
