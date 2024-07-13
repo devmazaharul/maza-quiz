@@ -15,7 +15,7 @@ export const POST=async(req)=>{
            const updateStatement=await getAdmin.save()
 
            if(updateStatement){
-            cookies().set({name:"mazaharul",value:"maza123"})
+            cookies().set({name:"token",value:getAdmin.id})
             return NextResponse.json({message:"Successfully login",},{status:200})
            }else{
             return NextResponse.json({message:"Please try again later",},{status:202})

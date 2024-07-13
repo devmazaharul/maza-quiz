@@ -91,15 +91,15 @@ const handlesubmit=async(e)=>{
 
   return (
     <>
-  <div className="mt-14">
-  <h1 className={`${isDark?"text-center text-gray-200  font-semibold text-lg":"text-center text-gray-800 py-6 font-semibold text-lg"}`}>Admin login </h1>
+  <div className="mt-8">
+  <h1 className={`${isDark?"text-center text-gray-200 py-6  font-semibold text-lg":"text-center text-gray-800 py-6 font-semibold text-lg"}`}>Admin login </h1>
       {otp ? (
       <form onSubmit={handlesubmit} className={`md:w-[30%] w-[95%] py-8  p-4 text-white rounded-md  mx-auto  ${isDark?"bg-gray-800 border-gray-700":"bg-gray-100 border-gray-300"} border shadow-md "`}>
           <input
             type="tel"
             placeholder="Enter OTP"
             maxLength={5}
-            className={`{${isDark?"bg-gray-700 text-gray-200":"bg-gray-100 border text-gray-700 border-gray-400"}}  my-3 outline-none  px-3 py-2 w-full rounded-md `}
+            className={`{${isDark?"bg-gray-700 text-gray-800  ":"bg-gray-100 border text-gray-700 border-gray-400"}}  my-3 outline-none  px-3 py-2 w-full rounded-md `}
             value={otpval}
             onChange={(e)=>setOtpval(e.target.value)}
           />
@@ -119,7 +119,7 @@ const handlesubmit=async(e)=>{
        onClick={handleSendmail}
        className="bg-emerald-600 mt-4  outline-none text-emerald-200  px-7 py-2 w-[160px] hover:bg-emerald-800 mx-auto flex items-center gap-1 rounded-md "
      >
-   {loading ? "sending...":<p className="flex items-center">Send code <FiSend /></p>}  
+   {loading ? "Sending...":<p className="flex items-center">Send code <FiSend /></p>}  
      </button>
    ):""}
 

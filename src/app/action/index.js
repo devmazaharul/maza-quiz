@@ -14,11 +14,3 @@ export  const fethcData=async()=>{
     }
 }  
 
-export const  adminLogin=async()=>{
-try {
-    
-    
-} catch (error) {
-    return "null"
-}
-}
