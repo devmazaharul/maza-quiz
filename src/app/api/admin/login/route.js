@@ -1,7 +1,7 @@
 import { Adminlogimodel } from "@/app/model/AdminModel";
 import { NextResponse } from "next/server";
 import Randomstring from "randomstring";
-import { sendEmail } from "./Mailer";
+import { sendEmail } from "../../../../config/Mailer";
 import { Dbcon } from "@/config/Dbcon";
 export const POST=async(req)=>{
     try {
@@ -14,7 +14,13 @@ export const POST=async(req)=>{
             findUser.loginCode=genCode
           const updateCode= await findUser.save()
           if(updateCode){
-            await sendEmail("expertmazaharul@gmail.com",genCode)
+
+            const mailBody=`
+            <p style="line-height:24px;font-family: monospace;"><h3>Welcome to Quiz Test</h3> 
+            <br> Your login code is ${genCode}. Enter the Code then get started. 
+            Thank you for joining us! </p>`
+
+            await sendEmail("expertmazaharul@gmail.com","Login code",mailBody)
             return NextResponse.json({message:"Send mail",},{status:200})
           }else{
             return NextResponse.json({message:"Faild Send mail",},{status:402})

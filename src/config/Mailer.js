@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
 
- export const sendEmail=async(email,code)=>{
+ export const sendEmail=async(email,subject,body)=>{
   try {
     
 
@@ -18,8 +18,8 @@ import nodemailer from "nodemailer";
       const info = await transporter.sendMail({
         from: '"Quiz Test⚡"<freelancermazaharul1@gmail.com>',
         to: email, // list of receivers
-        subject: "Login code", // Subject line
-        html: `<p style="line-height:24px;font-family: monospace;"><h3>Welcome to Quiz Test</h3> <br> Your login code is ${code}. Enter the Code then get started. Thank you for joining us! </p>`
+        subject: subject, // Subject line
+        html: body
       });
       if(info){
         return({message:"Mail send 🚀. Check your email : "+email ,status:200})

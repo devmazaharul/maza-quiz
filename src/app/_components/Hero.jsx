@@ -26,7 +26,7 @@ export default function Hero() {
 
       <div className="mt-8 flex  flex-wrap justify-center gap-4">
         <Link
-          className="  w-fit  rounded border border-emerald-600 bg-emerald-500 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white  active:text-opacity-75 sm:w-auto"
+          className="  w-fit  rounded border border-emerald-600 bg-emerald-500 px-12 py-3 text-sm font-medium text-white  hover:bg-emerald-700  active:text-opacity-75 sm:w-auto"
           href="/test"
         >
           Get Test
