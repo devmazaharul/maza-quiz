@@ -1,50 +1,22 @@
 const mongoose=require("mongoose")
 
-const HisabUserSchima=new mongoose.Schema({
-    id:{
+const QuizSchima=new mongoose.Schema({
+    quizId:{
         type:String,
         require:true
     },
-    name:{
+    title:{
         type:String,
         require:true
     },
-    email:{
+    desc:{
         type:String,
         require:true
     },
-    phone:{
-        type:String,
-        require:true
-    },
-    address:{
-        type:String,
-        require:true
-    },
-    currency:{
-        type:String,
-        require:true
-    },
-    password:{
-        type:String,
-        require:true
-    },
-    profileInfo:{
-        type:Object,
-        require:true
-    },
-    creationDatae:{
-        type:String,
-        require:true
-    },
-    activationKey:{
-        type:String,
-        require:true
-    },
-    activationStatus:{
-        type:String,
-        require:true
+    insertDate:{
+        require:true,
+        type:String
     }
 },{timestamps:true})
 
-export const QuizModel=mongoose.models.hisabuser || mongoose.model("hisabuser",HisabUserSchima)
+export const QuizModel=mongoose.models.quiztable || mongoose.model("quiztable",QuizSchima)
