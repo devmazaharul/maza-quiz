@@ -5,6 +5,7 @@ import { FiSend } from "react-icons/fi";
 import { MdOutlineMarkEmailRead } from "react-icons/md";
 import { useRouter } from "next/navigation";
 import { Usercontext } from "../contex/Contextapi";
+import { site_url } from "@/siteurl";
 
 export function AdminLoginform() {
 
@@ -23,7 +24,7 @@ const handleSendmail=(e)=>{
   e.preventDefault()
   setLoading(true)
   const sendMail=async()=>{
-    const mailapi=await fetch("api/admin/login",{
+    const mailapi=await fetch(site_url+"/admin/login",{
       method:"POST",
       headers:{
         "Content-type":"application/json",
