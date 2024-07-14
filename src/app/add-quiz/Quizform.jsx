@@ -15,7 +15,7 @@ setValue({...value,[name]:e.target.value})
         e.preventDefault()
         setLoading(true)
 
-        const fetChaapi=await fetch("api/admin/add-quiz",{
+        const fetChaapi=await fetch(site_url+"admin/add-quiz",{
             method:"POST",
             headers:{
                 "Content-type":"application/json"

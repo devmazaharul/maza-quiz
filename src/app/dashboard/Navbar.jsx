@@ -17,7 +17,7 @@ export default function Navbar() {
 
            <Link  href={'/dashboard'}> <li className='bg-emerald-600 p-2 m-1 my-2 flex items-center gap-2 rounded-md'> <IoHomeOutline/> Dashboard</li></Link>
            <Link  href={'/add-quiz'}> <li className='hover:bg-gray-600 p-2 m-1 flex items-center gap-2 rounded-md'> <MdOutlineAddBox/> Add Quiz</li></Link>
-           <Link  href={'/certificate'}> <li className='hover:bg-gray-600 p-2 m-1 my-2 flex items-center gap-2 rounded-md'> <GrCertificate/> Certificate </li></Link>
+           <Link  href={'dashboard/certificate'}> <li className='hover:bg-gray-600 p-2 m-1 my-2 flex items-center gap-2 rounded-md'> <GrCertificate/> Certificate </li></Link>
            <button name='action' value="logout" > <li className='hover:bg-gray-600 p-2 m-1 my-2 flex items-center gap-2 rounded-md'> <HiOutlineLogout/> Logout </li></button>
           
         </ul>

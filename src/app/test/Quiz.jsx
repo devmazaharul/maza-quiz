@@ -6,24 +6,21 @@ export default async function Quiz() {
     const {data}=UserData;
   return (
     <>
-    
-    {data && data.map((item,i) => (
+    {data && data.reverse().map((item,i) => (
        <div key={i} className="text-gray-500 rounded-md  m-4 border border-gray-700 w-[94%] mx-auto md:w-[80%]">
-  <p className="text-center font-semibold text-emerald-600 rounded-t-md bg-slate-800 p-2"> {i+1}</p>
+  <div className="font-semibold flex items-center justify-between text-gray-400 rounded-t-md bg-slate-800 p-1"> <p className="bg-emerald-600 text-gray-200 border-gray-800 border p-2 rounded-md">{i+1}</p>  <small>Quiz id: {item.quizId}</small></div>
          <div
           
           className=" my-6  px-4  "
         >
           <h2 className="text-lg text-gray-400 flex gap-2 items-center py-3 font-semibold">
             <FaRegCircleQuestion className="text-emerald-600	 text-2xl" />
-            নিচের কোডে কি ভুল আছে?
+            {item.title}
           </h2>
           <p  className="w-[80%] mx-auto">
-            ধরে নেই আমাদের দুটি .js ফাইল আছে। একটি হলো sum.js এবং আরেকটি হলো
-            index.js এবং দুটি ফাইল একই ফোল্ডারে আছে। index.js ফাইলটি তে sum()
-            ফাংশনটি কল করে সঠিকভাবে আউটপুট দেখানোর ক্ষেত্রে নিচের কোডে কি ভুল
-            আছে?
+           {item.desc}
           </p>
+         
         </div>
        </div>
       ))}

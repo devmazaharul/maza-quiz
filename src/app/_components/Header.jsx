@@ -12,7 +12,7 @@ export default function Header() {
   const {isDark,setisDark}=useContext(Usercontext)
 
   return (
-    <header className={`${isDark?"bg-gray-900 text-gray-200":"bg-white border border-b-gray-200 text-black"}`}>
+    <header className={`${isDark?"bg-gray-900 text-gray-200":"bg-white border border-b-gray-200 text-black"} print:hidden`}>
   <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
     <div className="flex h-16 items-center justify-between">
       <div className="flex-1 md:flex md:items-center md:gap-12">

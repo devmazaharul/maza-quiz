@@ -4,10 +4,9 @@ import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
 export default function page() {
-  // if(cookies().has("token")){
-  //   cookies().delete("token")
-  //   redirect("/admin")
-  // }
+if(!cookies().has("token")){
+redirect("/admin")
+}
   return (
     <div>
       <Quizform/>
