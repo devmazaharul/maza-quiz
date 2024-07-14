@@ -15,7 +15,7 @@ setValue({...value,[name]:e.target.value})
         e.preventDefault()
         setLoading(true)
 
-        const fetChaapi=await fetch(site_url+"admin/add-quiz",{
+        const fetChaapi=await fetch("api/admin/add-quiz",{
             method:"POST",
             headers:{
                 "Content-type":"application/json"
@@ -24,7 +24,7 @@ setValue({...value,[name]:e.target.value})
         })
 
         if(fetChaapi.ok){
-            console.log("ok")
+           toast.success("Quiz added")
             setLoading(false)
         }else{
             toast.error("Quiz not added")

@@ -15,7 +15,7 @@ export const POST=async(req)=>{
         })
 
         const insertsave=await insertQuizdata.save()
-        console.log(insertQuizdata)
+  
         if(insertsave){
             return NextResponse.json({message:"successfully quiz added"},{status:200})
         }else{

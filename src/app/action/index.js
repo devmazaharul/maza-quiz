@@ -11,6 +11,7 @@ export  const fethcData=async()=>{
         })
         const jsCon=await fetchApi.json()
 
+
         return jsCon
     } catch (error) {
         return "Some thing went wrong"
