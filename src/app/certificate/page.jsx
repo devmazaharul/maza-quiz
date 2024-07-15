@@ -17,6 +17,10 @@ const Sanchez_font=Sanchez({
 
 
 export default function certificate() {
+
+  const handlePrint=()=>{
+    print()
+  }
   
   return (
     <div className={`${Sanchez_font.className}`}>
@@ -51,7 +55,7 @@ export default function certificate() {
             </div>
            
         </div>
-        <button onClick={print} className='bg-emerald-600 mx-auto w-fit block text-center my-3 px-8 py-2 rounded-md print:hidden'>Print </button>
+        <button onClick={handlePrint} className='bg-emerald-600 mx-auto w-fit block text-center my-3 px-8 py-2 rounded-md print:hidden'>Print </button>
     </div>
   )
 }

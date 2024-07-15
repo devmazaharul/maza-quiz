@@ -212,10 +212,10 @@ export default function Services() {
   
       <div className="mt-12 text-center">
         <a
-          href="/result"
+          href="/certificate"
           className="inline-block  rounded bg-emerald-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-emerald-700 "
         >
-          Get Result
+      Certificate
         </a>
       </div>
     </div>
