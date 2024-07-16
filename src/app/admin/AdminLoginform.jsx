@@ -54,7 +54,7 @@ const handlesubmit=async(e)=>{
   e.preventDefault()
   console.log(otpval)
   setLoading(true)
-  const mailapi=await fetch(site_url+"/api/verifyadmincode",{
+  const mailapi=await fetch(site_url+"api/verifyadmincode",{
     method:"POST",
     headers:{
       "Content-type":"application/json",
