@@ -12,7 +12,7 @@ export  const getQuizlist=async()=>{
         if(res.ok){
             if(res.status==200){
                 const jsCon=await res.json()
-                return jsCon
+                return {data:jsCon}
             }else{
                 throw new Error("faild fetch3")
             }

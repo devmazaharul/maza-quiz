@@ -28,7 +28,7 @@ import {
           </TableRow>
         </TableHeader>  
         <TableBody>  
-          {quizdata && quizdata.map((item,i) => (
+          {quizdata.data && quizdata.data.reverse().map((item,i) => (
             <TableRow key={i}>
               <TableCell className="font-medium">#{item.quizId}</TableCell>
               <TableCell>{item.title}</TableCell>
