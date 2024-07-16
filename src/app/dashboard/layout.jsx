@@ -5,7 +5,7 @@ import { cookies } from 'next/headers'
 
 export default function layout({children}) {
 
-  if(!cookies().get("token")){
+  if(!cookies().get("slip")){
     redirect("/admin")
   }
 

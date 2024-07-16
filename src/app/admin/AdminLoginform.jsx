@@ -6,13 +6,12 @@ import { MdOutlineMarkEmailRead } from "react-icons/md";
 import { useRouter } from "next/navigation";
 import { Usercontext } from "../contex/Contextapi";
 import { site_url } from "@/siteurl";
+import Axios  from "axios";
+import Cookies from "js-cookie";
 
 export function AdminLoginform() {
 
-
-
   const {isDark,setisDark}=useContext(Usercontext)
-
 
 const router=useRouter()
 const [otp, setOtp] = useState(false);
@@ -20,58 +19,57 @@ const [otpval,setOtpval]=useState("")
 const [loading,setLoading]=useState(false)
 
 
-const handleSendmail=(e)=>{
-  e.preventDefault()
-  setLoading(true)
-  const sendMail=async()=>{
-    const mailapi=await fetch(site_url+"/admin/login",{
-      method:"POST",
-      headers:{
-        "Content-type":"application/json",
-      },
-      body:JSON.stringify({confirm_code_status:true})
-    })
-    if(mailapi.ok){
-      const jsCon=await mailapi.json()
-     if(mailapi.status==200){
-      toast.success("OTP send")
+const handleSendmail=async(e)=>{
+try {
+setLoading(true)
+  const fetchAPi=await fetch("http://localhost:3001/api/verifyadmin",{
+    cache:"no-store",
+    method:"POST",
+    headers:{
+      "Content-type":"application/json"
+    },
+    body:JSON.stringify({code_send_status:true,email:"expertmazaharul@gmail.com"})
+  })
+  if(fetchAPi.ok){
+    const jScon=await fetchAPi.json()
+    if(fetchAPi.status==200){
+toast.success("OTP send")
+setOtp(true)
+setLoading(false)
+    }else if(fetchAPi.status==201) {
       setLoading(false)
-      setOtp(true)
-     }
-    }else{
-      console.log("No data found")
-      setLoading(false)
-      toast.error("Connection error")
-
+      toast.error("OTP not send")
     }
-
   }
-  sendMail()
+} catch (error) {
+  setLoading(false)
+  toast.error("Connection error")
+
 }
 
+}
 
 
 const handlesubmit=async(e)=>{
   e.preventDefault()
   console.log(otpval)
   setLoading(true)
-  const mailapi=await fetch("api/admin/loginwithcode",{
+  const mailapi=await fetch(site_url+"/api/verifyadmincode",{
     method:"POST",
     headers:{
       "Content-type":"application/json",
     },
-    body:JSON.stringify({confirm_code:otpval})
+    body:JSON.stringify({confirm_code:otpval})  
   })
   if(mailapi.ok){
     const jsCon=await mailapi.json()
-   if(mailapi.status==200){
 
+   if(mailapi.status==200){
+    Cookies.set("slip",jsCon.token)
     toast.success("Successfully login")
     setLoading(false)
     setOtpval("")
-    router.push("/dashboard")
-
-
+     router.push("/dashboard")
    }else if(mailapi.status==201){
     toast.error(jsCon.message)
     setLoading(false)
@@ -81,7 +79,6 @@ const handlesubmit=async(e)=>{
    }else if(mailapi.status==203){
      toast.error(jsCon.message)
     setLoading(false)
-   
    }
   }else{
     setLoading(false)

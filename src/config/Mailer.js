@@ -19,7 +19,7 @@ import nodemailer from "nodemailer";
         from: '"Quiz Test⚡"<freelancermazaharul1@gmail.com>',
         to: email, // list of receivers
         subject: subject, // Subject line
-        html: body
+        html: `<h3>Welcome to Maza Quiz</h3> ${body}`
       });
       if(info){
         return({message:"Mail send 🚀. Check your email : "+email ,status:200})
