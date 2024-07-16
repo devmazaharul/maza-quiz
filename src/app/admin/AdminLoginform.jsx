@@ -22,7 +22,7 @@ const [loading,setLoading]=useState(false)
 const handleSendmail=async(e)=>{
 try {
 setLoading(true)
-  const fetchAPi=await fetch("http://localhost:3001/api/verifyadmin",{
+  const fetchAPi=await fetch(site_url+"/api/verifyadmin",{
     cache:"no-store",
     method:"POST",
     headers:{
