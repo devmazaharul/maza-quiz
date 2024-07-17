@@ -1,4 +1,5 @@
-import { getQuizlist } from "@/app/action"
+
+import { doQuizdlt, getQuizlist } from "@/app/action"
 import {
     Table,
     TableBody,
@@ -12,11 +13,13 @@ import {
   import Link from "next/link"
 
   export default async function TableDemo() {
-
     const quizdata=await getQuizlist()
 
+ 
+
+
     return (
-      <div className="w-[98%] mx-auto shadow-md border rounded-md p-1 border-gray-700">
+      <form action={doQuizdlt} className="w-[98%] mx-auto shadow-md border rounded-md p-1 border-gray-700">
 <Table>
         <TableCaption>A list of your recent invoices.</TableCaption>
         <TableHeader>
@@ -33,13 +36,16 @@ import {
               <TableCell className="font-medium">#{item.quizId}</TableCell>
               <TableCell>{item.title}</TableCell>
               <TableCell>{item.desc}</TableCell>
-              <TableCell className="text-right flex items-center gap-1"><Link href="#" className="bg-green-400 px-2 py-1 rounded-md hover:bg-green-500">Edit</Link><button className="bg-red-400 px-2 py-1 rounded-md hover:bg-red-500">Delete</button></TableCell>
+              <TableCell className="text-right flex items-center gap-1">
+                <Link  href="#" className="bg-green-400 px-2 py-1 rounded-md hover:bg-green-500">Edit</Link>
+             <button name="action" value={item.quizId} className="bg-red-400 px-2 py-1 rounded-md hover:bg-red-500" href={`/dashboard/quiz/${item.quizId}`}>Delete</button>
+             </TableCell>
             </TableRow>
           ))}
         </TableBody>
       
       </Table>
-      </div>
+      </form>
     )
   }
   

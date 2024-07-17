@@ -37,7 +37,28 @@ export  const fethcadminData=async()=>{
     }
 }  
 
-
+ export const doQuizdlt=async(formData)=>{
+    try {
+        const id=await formData.get("action")
+        const res=await fetch(site_url+"deletequiz",{
+            method:"POST",
+            headers:{
+                "Content-type":"application/json"
+            },
+            body:JSON.stringify({quizid:id})
+        })
+        if(res.ok){
+            const jsCon=await res.json()
+          console.log(jsCon)
+        }else{
+            console.log("Something went wrong")
+        }
+        
+   
+    } catch (error) {
+        console.log("error")
+    }
+}
 
 
 
