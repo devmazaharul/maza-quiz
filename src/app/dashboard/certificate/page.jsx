@@ -33,8 +33,6 @@ const {data}=await getAllcertificate()
      <div className="border w-[98%] mx-auto border-gray-700 rounded-md shadow-md ">
      
        <h1 className="text-center text-xl font-bold py-3">Certificates</h1>
- </div>
-  
  <Table className="mt-6">
          <TableCaption>A list of your recent invoices.</TableCaption>
          <TableHeader>
@@ -64,7 +62,7 @@ const {data}=await getAllcertificate()
 
 
 
-
+       </div>
   
     </div>
   )}
