@@ -2,12 +2,13 @@
 import { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { FiSend } from "react-icons/fi";
-import { MdOutlineMarkEmailRead } from "react-icons/md";
 import { useRouter } from "next/navigation";
 import { Usercontext } from "../contex/Contextapi";
 import { site_url } from "@/siteurl";
-import Axios  from "axios";
+
 import Cookies from "js-cookie";
+import { IoRocketSharp } from "react-icons/io5";
+import { BsRocketTakeoffFill } from "react-icons/bs";
 
 export function AdminLoginform() {
 
@@ -90,24 +91,24 @@ const handlesubmit=async(e)=>{
   return (
     <>
   <div className="mt-8">
-  <h1 className={`${isDark?"text-center text-gray-200 py-6  font-semibold text-lg":"text-center text-gray-800 py-6 font-semibold text-lg"}`}>Admin login </h1>
+  <h1 className={`${isDark?"text-center text-gray-200 py-2  font-semibold text-lg":"text-center text-gray-800 py-6 font-semibold text-lg"}`}>Admin login </h1>
       {otp ? (
-      <form onSubmit={handlesubmit} className={`md:w-[30%] w-[95%] py-8  p-4 text-white rounded-md  mx-auto  ${isDark?"bg-gray-800 border-gray-700":"bg-gray-100 border-gray-300"} border shadow-md "`}>
+      <form onSubmit={handlesubmit} className={`md:w-[20%] w-[75%] b py-4  p-4 text-white rounded-md  mx-auto    "`}>
           <input
-            type="tel"
+            type="number"
             placeholder="Enter OTP"
             maxLength={5}
-            className={`${isDark?" bg-gray-900  text-gray-300  ":"bg-gray-100 border text-gray-700 border-gray-400"} my-3 outline-none  px-3 py-2 w-full rounded-md `}
+            className={`${isDark?" bg-gray-700  text-gray-300  ":"bg-gray-100 border text-gray-800 border-gray-300"} my-3 outline-none  px-3 py-2 w-full rounded-md `}
             value={otpval}
             onChange={(e)=>setOtpval(e.target.value)}
           />
           <button
           onClick={() => setOtp(true)}
-          className="bg-emerald-600  outline-none text-emerald-200  px-7 py-2 w-[160px] hover:bg-emerald-800 mx-auto flex items-center gap-1 rounded-md "
+          className="bg-indigo-700  outline-none text-emerald-200  px-4 py-1  hover:bg-indigo-800 mx-auto flex items-center gap-1 rounded-md "
         >
      {loading ? "Entering...":"Enter admin"}
         </button>
-{otp &&  <p ><small className="text-green-600 w-fit mx-auto  text-center flex items-center gap-1  py-4 "><MdOutlineMarkEmailRead/>Code send at ex****l@gmail.com</small></p>}
+{otp &&  <p ><small className="text-green-600 w-fit mx-auto  text-center flex items-center gap-1  py-4 ">Code send at ex****l@gmail.com 🚀</small></p>}
       </form>
         ) : (
           ""
@@ -115,9 +116,9 @@ const handlesubmit=async(e)=>{
    {!otp?(
        <button
        onClick={handleSendmail}
-       className="bg-emerald-600 mt-4  outline-none text-emerald-200  px-7 py-2 w-[160px] hover:bg-emerald-800 mx-auto flex items-center gap-1 rounded-md "
+       className="bg-indigo-600 mt-4  outline-none text-gray-200  px-7 py-2 w-[160px] hover:bg-indigo-800 mx-auto flex items-center gap-2 rounded-md "
      >
-   {loading ? "Sending...":<p className="flex items-center">Send code <FiSend /></p>}  
+   {loading ?<p className="flex items-center gap-1">Sending<BsRocketTakeoffFill/></p>:<p className="flex items-center gap-1">Send OTP <IoRocketSharp /></p>}  
      </button>
    ):""}
 

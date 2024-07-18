@@ -1,8 +1,16 @@
 
-import React from 'react'
 import {AdminLoginform} from './AdminLoginform'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
+export async function generateMetadata({ params }) {
+  return {
+    title: 'Admin Login'
+
+  }
+}
+
+
+
 
 export default function page() {
 

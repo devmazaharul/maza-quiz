@@ -6,9 +6,14 @@ import { useContext } from 'react';
  import { Usercontext } from '../contex/Contextapi';
  import Image from 'next/image';
  import { FaLock } from "react-icons/fa";
+import { usePathname } from 'next/navigation';
 
 
 export default function Header() {
+
+  const path=usePathname()
+
+
   const {isDark,setisDark}=useContext(Usercontext)
 
   return (
@@ -27,15 +32,16 @@ export default function Header() {
           <ul className="flex items-center gap-6 text-sm">
            
 
+
             <li>
-              <Link className={`${isDark?" transition hover:text-gray-200/75":" transition hover:text-gray-800/75"}`} href="/test"> Test </Link>
+              <Link className={` ${path=="/test"?"text-pink-400":""} ${isDark?" transition hover:text-gray-200/75":" transition hover:text-gray-800/75"}`} href="/test"> Test </Link>
             </li>
 
             <li>
-              <Link className={`${isDark?" transition hover:text-gray-200/75":" transition hover:text-gray-800/75"}`} href="/result"> Result </Link>
+              <Link className={`${path=="/result"?"text-pink-400":""} ${isDark?" transition hover:text-gray-200/75":" transition hover:text-gray-800/75"}`} href="/result"> Result </Link>
             </li>
             <li>
-              <Link className={`${isDark?" transition flex items-center hover:text-gray-200/75":" transition flex items-center gap-1 hover:text-gray-800/75"}`} href="/admin"><FaLock/>  </Link>
+              <Link className={`${path=="/admin"?"text-pink-400":""} ${isDark?" transition flex items-center hover:text-gray-200/75":" transition flex items-center gap-1 hover:text-gray-800/75"}`} href="/admin"><FaLock/>  </Link>
             </li>
 
             <li>

@@ -50,7 +50,8 @@ export  const fethcadminData=async()=>{
         })
         if(res.ok){
             const jsCon=await res.json()
-          return {message:jsCon.message}
+            
+         
          
         }else{
             console.log("Something went wrong")
