@@ -34,7 +34,7 @@ useEffect(()=>{
     
   
 
-},[])
+},[id])
 
 
 const handlePrint=()=>{
