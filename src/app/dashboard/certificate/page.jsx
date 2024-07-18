@@ -50,9 +50,9 @@ const {data}=await getAllcertificate()
              <TableRow key={i}>
                <TableCell className="font-medium">#{cer.crId}</TableCell>
                <TableCell className="font-medium">{cer.candidateGrade=="fail"?<p className="text-red-400">Fail</p>:<p className="text-green-400">Pass</p>}</TableCell>
-               <TableCell>{cer.candidateName}</TableCell>
+               <TableCell className="capitalize">{cer.candidateName}</TableCell>
                <TableCell>{cer.candidateNumber}</TableCell>
-               <TableCell>{cer.candidateGrade}</TableCell>
+               <TableCell className="capitalize">{cer.candidateGrade}</TableCell>
                <TableCell className="text-right"><Link href={`/dashboard/certificate/${cer.crId}`} className="bg-emerald-500 px-3 text-gray-200 py-1 rounded-md">View</Link></TableCell>
              </TableRow>
            ))}

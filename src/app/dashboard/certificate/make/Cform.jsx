@@ -61,13 +61,14 @@ const handleSubmit=async(e)=>{
 
 <>
        
-        <form onSubmit={handleSubmit} className='bg-gray-800 rounded-md shadow-md w-[600px] mx-auto py-8 px-3'>
-        <h1 className='text-emerald-400 text-center text-xl pb-3'>certificate form</h1>
+        <form onSubmit={handleSubmit} className='rounded-md shadow-3xl  w-[600px] mx-auto py-8 px-3'>
+        <h1 className='text-gray-200 text-center text-xl  pb-3'>Certificate <p className='text-pink-500 inline text-2xl'>form</p></h1>
             <input type="text" placeholder='Candidate name' onChange={(e)=>handleChange(e,"candidateName")}  value={info.candidateName} className='w-full capitalize outline-none my-1 py-2 px-4 rounded-md border border-gray-700 bg-gray-600'  />
-            <input type="text" placeholder='Candidate Number'  onChange={(e)=>handleChange(e,"candidateNumber")}  value={info.candidateNumber} className='w-full outline-none my-1 py-2 px-4 rounded-md border border-gray-700 bg-gray-600'  />
+            <input type="number" placeholder='Candidate Number'  onChange={(e)=>handleChange(e,"candidateNumber")}  value={info.candidateNumber} className='w-full outline-none my-1 py-2 px-4 rounded-md border border-gray-700 bg-gray-600'  />
            
-           <select  onChange={(e)=>handleChange(e,"candidateGrade")} className='w-full outline-none my-1 py-2 px-4 rounded-md border border-gray-700 bg-gray-600' name="grade" value={info.candidateGrade}>
-            <option>Grade</option>
+           <select  onChange={(e)=>handleChange(e,"candidateGrade")} className='w-full border-none outline-none my-1 py-2 px-4 rounded-md border border-gray-700 bg-gray-600' name="grade" value={info.candidateGrade}>
+            
+            <option value="fail">Grade</option>
             <option value="A+">A+</option>
             <option value="A">A</option>
             <option value="A-">A-</option>
@@ -76,7 +77,7 @@ const handleSubmit=async(e)=>{
             <option value="fail">Fail</option>
            </select>
             <input type="text" placeholder='Candidate Title'  onChange={(e)=>handleChange(e,"candidateTitle")}  value={info.candidateTitle} className='w-full capitalize outline-none my-1 py-2 px-4 rounded-md border border-gray-700 bg-gray-600'  />
-            <button className='bg-indigo-500 my-2 px-8 py-2 rounded-md '>{loading?"Genarating...":"Genarate"}</button>
+            <button className='bg-pink-600 hover:bg-pink-700 my-2 px-8 py-2 rounded-md '>{loading?"Genarating...":"Genarate"}</button>
         </form>
     </>
   

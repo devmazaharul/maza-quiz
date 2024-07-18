@@ -52,7 +52,7 @@ return (
            <Image src={'/Maza-quiz__2_-removebg-preview.png'} className='text-center w-fit mx-auto' width={100} height={100} alt="siteloog"/>
        </div>
        <div>
-         <h1 className='text-2xl '>Your awesome certificate</h1>
+         <h1 className='text-2xl '>Your skill certificate</h1>
        </div>
        <div>
          <h1 className='text-md text-gray-400'>present to</h1>
@@ -62,7 +62,7 @@ return (
        </div>
        
        <div>
-         <h1 className='text-gray-400'> <p className={`${data.candidateGrade=="fail"?"text-red-400":"text-green-500"}  inline gap-2 text-center text-lg`}>{data.candidateGrade}</p> For Successfully completing a online cources. </h1>
+         <h1 className='text-gray-400'> <p className={`${data.candidateGrade=="fail"?"text-red-400 capitalize":"text-green-500"}  inline gap-2 text-center text-lg`}>{data.candidateGrade}</p> For Successfully completing a online cources. </h1>
        </div>
        <div className='py-1'>
          <h1 className='text-md'>{data.candidateTitle}</h1>

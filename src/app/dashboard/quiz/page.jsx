@@ -13,7 +13,7 @@ export default function page() {
   return (
     <div>
         <div className="hera py-3">
-            <Link className='bg-emerald-500 rounded-md text-gray-700 p-1' href='/dashboard/add-quiz'>Add quiz</Link>
+            <Link className='bg-pink-600 rounded-md text-gray-200 py-1 px-6 ' href='/dashboard/add-quiz'>Add quiz</Link>
         </div>
 
         <Allquiz/>
