@@ -1,5 +1,6 @@
 "use server"
 import { site_url } from "@/siteurl"
+import axios from "axios"
 import { cookies } from "next/headers"
 import { redirect } from "next/navigation"
 import toast from "react-hot-toast"
@@ -55,6 +56,27 @@ export  const fethcadminData=async()=>{
         }
         
    
+    } catch (error) {
+        console.log("error")
+    }
+}
+
+export const getAllcertificate=async()=>
+{
+    try {
+        const responce=await axios.get(site_url+"getcertificates")
+        return {data:responce.data}
+     
+    } catch (error) {
+        console.log("error")
+    }
+}
+export const getcertificateData=async(crId)=>
+{
+    try {
+         const fetchCer=await axios.post(site_url+"getcertificate",{id:crId})
+         return {cData:fetchCer}
+      
     } catch (error) {
         console.log("error")
     }
