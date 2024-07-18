@@ -13,7 +13,7 @@ import { fethcadminData } from "../action"
 const getAdmnifo=await fethcadminData();
 const {data}=getAdmnifo
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata() {
   return {
     title: 'Dashboard'
 

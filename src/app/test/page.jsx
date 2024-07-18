@@ -9,6 +9,12 @@ const tiroBangla = Anek_Bangla({
   subsets: ["bengali"],
 });
 
+export async function generateMetadata() {
+  return {
+    title: 'Verify your skill'
+
+  }
+}
 
 export default async function page() {
  
