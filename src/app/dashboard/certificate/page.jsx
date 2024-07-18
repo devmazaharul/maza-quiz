@@ -75,7 +75,7 @@ const {data}=await getAllcertificate()
    
      <h1 className="text-center text-xl font-bold py-3">Certificates</h1>
 
- {data ? (
+
 
    <Table className="mt-6">
        <TableCaption>A list of your recent invoices.</TableCaption>
@@ -105,7 +105,7 @@ const {data}=await getAllcertificate()
      </Table>
   
 
- ):<p className="text-red-400 font-semibold text-center">No Certificate found</p>}
+
   </div>
   </>
 
