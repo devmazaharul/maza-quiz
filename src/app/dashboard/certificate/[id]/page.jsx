@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import Cerform from './Ccerform'
 
 export async function generateMetadata({ params }) {
@@ -11,7 +11,11 @@ export async function generateMetadata({ params }) {
 export default function page() {
   return (
     <>
-    <Cerform/>
+<div>
+  <Suspense fallback="loading...">
+  <Cerform/>
+  </Suspense>
+</div>
     </>
   )
 }

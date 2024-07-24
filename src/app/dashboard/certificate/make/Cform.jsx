@@ -23,7 +23,7 @@ const handleSubmit=async(e)=>{
 
     e.preventDefault()
     setLoading(true)
- 
+
     try {
         const postCertificateData=await axios.post(site_url+"genaratecertificate",{info})
     
@@ -66,8 +66,23 @@ const handleSubmit=async(e)=>{
             <input type="text" placeholder='Candidate name' onChange={(e)=>handleChange(e,"candidateName")}  value={info.candidateName} className='w-full capitalize outline-none my-1 py-2 px-4 rounded-md border border-gray-700 bg-gray-600'  />
             <input type="number" placeholder='Candidate Number'  onChange={(e)=>handleChange(e,"candidateNumber")}  value={info.candidateNumber} className='w-full outline-none my-1 py-2 px-4 rounded-md border border-gray-700 bg-gray-600'  />
            
+
+           <select  onChange={(e)=>handleChange(e,"candidateTitle")}  value={info.candidateTitle} required  className='w-full border-none outline-none my-1 py-2 px-4 rounded-md border border-gray-700 bg-gray-600' name="grade" >
+            <option value="">Topic</option>
+            <option value="Web Design">Web Design</option>
+            <option value="Grapich Design">Grapich Design</option>
+            <option value="basic computer">Basic Computer</option>
+            <option value="ms word and excel">MS Word And Excel</option>
+            <option value="ms word and excel">Social Media Manage</option>
+            <option value="Data Entry">Data Entry</option>
+            <option value="facebook marketing">Facebook Marketing</option>
+            <option value="youtube marketing">Youtube Marketing</option>
+            <option value="Google Marketing">Google Marketing</option>
+            <option value="SEO">SEO</option>
+            <option value="other">Other</option>
+           </select>
+
            <select  onChange={(e)=>handleChange(e,"candidateGrade")} className='w-full border-none outline-none my-1 py-2 px-4 rounded-md border border-gray-700 bg-gray-600' name="grade" value={info.candidateGrade}>
-            
             <option value="fail">Grade</option>
             <option value="A+">A+</option>
             <option value="A">A</option>
@@ -76,7 +91,11 @@ const handleSubmit=async(e)=>{
             <option value="C">C</option>
             <option value="fail">Fail</option>
            </select>
-            <input type="text" placeholder='Candidate Title'  onChange={(e)=>handleChange(e,"candidateTitle")}  value={info.candidateTitle} className='w-full capitalize outline-none my-1 py-2 px-4 rounded-md border border-gray-700 bg-gray-600'  />
+
+         
+         
+           
+          
             <button className='bg-pink-600 hover:bg-pink-700 my-2 px-8 py-2 rounded-md '>{loading?"Genarating...":"Genarate"}</button>
         </form>
     </>
