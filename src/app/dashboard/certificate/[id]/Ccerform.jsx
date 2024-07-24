@@ -24,8 +24,10 @@ useEffect(async()=>{
      if(res.status==200){
       setdata(res.data.data)
      }else if(res.status==201){
+      setdata(null)
       toast.error("Invalid certificate")
      }else{
+      setdata(null)
       toast.error("Connection error")
      }
     })
