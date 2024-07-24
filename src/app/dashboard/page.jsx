@@ -22,35 +22,37 @@ export async function generateMetadata() {
 
 export default function TableDemo() {
   return (
-  <div className="md:w-[96%] border border-gray-600 mx-auto shadow-md rounded-md">
-      <Table>
-      <TableCaption>Admin recent informaitio.</TableCaption>
-      <TableHeader>
-        <TableRow>
-          <TableHead className="w-[100px]">Admin Id</TableHead>
-          <TableHead>Name</TableHead>
-          <TableHead>Email</TableHead>
-          <TableHead className="text-right">login Code</TableHead>
-          <TableHead className="text-right">Total login</TableHead>
-          <TableHead className="text-right">adminStatus</TableHead>
-          <TableHead className="text-right">Last login</TableHead>
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-      
+  <div className="md:w-[96%]  mx-auto  rounded-md">
+{data ? (
+        <Table className="border border-gray-600 shadow-md">
+        <TableCaption>Admin recent informaitio.</TableCaption>
+        <TableHeader>
           <TableRow>
-            <TableCell className="font-medium">{data.id}</TableCell>
-            <TableCell>{data.name}</TableCell>
-            <TableCell>{data.email}</TableCell>
-            <TableCell>{data.loginCode}</TableCell>
-            <TableCell>{data.totalLogin}</TableCell>
-            <TableCell>{data.adminStatus}</TableCell>
-            <TableCell className="text-right">{data.lastLogin}</TableCell>
+            <TableHead className="w-[100px]">Admin Id</TableHead>
+            <TableHead>Name</TableHead>
+            <TableHead>Email</TableHead>
+            <TableHead className="text-right">login Code</TableHead>
+            <TableHead className="text-right">Total login</TableHead>
+            <TableHead className="text-right">adminStatus</TableHead>
+            <TableHead className="text-right">Last login</TableHead>
           </TableRow>
-
-      </TableBody>
-    
-    </Table>
+        </TableHeader>
+        <TableBody>
+        
+            <TableRow>
+              <TableCell className="font-medium">{data.id}</TableCell>
+              <TableCell>{data.name}</TableCell>
+              <TableCell>{data.email}</TableCell>
+              <TableCell>{data.loginCode}</TableCell>
+              <TableCell>{data.totalLogin}</TableCell>
+              <TableCell>{data.adminStatus}</TableCell>
+              <TableCell className="text-right">{data.lastLogin}</TableCell>
+            </TableRow>
+  
+        </TableBody>
+      
+      </Table>
+):<p className="text-red-400 font-semibold text-xl">No data found</p>}
   </div>
   )
 }

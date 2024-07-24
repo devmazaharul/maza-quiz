@@ -4,7 +4,7 @@ import Quizform from './Quizform'
 export async function generateMetadata({ params }) {
   return {
     title: 'Add quiz'
-
+   
   }
 }
 

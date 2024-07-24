@@ -10,6 +10,7 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import Link from "next/link"
+import { Suspense } from "react"
 
 
 export async function generateMetadata({ params }) {
@@ -21,18 +22,21 @@ export async function generateMetadata({ params }) {
 
 export default async function TableDemo() {
 
-const {data}=await getAllcertificate()
+const data=await getAllcertificate() 
 
   return (
   <>
-  {data && (
+  <Suspense fallback="loading...">
+
  <div>
       <div className="py-3">
        <Link className="bg-green-500 p-1 rounded-md  text-gray-700" href={'/dashboard/certificate/make'}>Genarate certificate</Link>
      </div>
      <div className="border w-[98%] mx-auto border-gray-700 rounded-md shadow-md ">
      
-       <h1 className="text-center text-xl font-bold py-3">Certificates</h1>
+       <h1 className="text-center text-gray-400 text-xl font-bold py-3">Certificates</h1>
+
+       {data ?(
  <Table className="mt-6">
          <TableCaption>A list of your recent invoices.</TableCaption>
          <TableHeader>
@@ -46,7 +50,7 @@ const {data}=await getAllcertificate()
            </TableRow>
          </TableHeader>
          <TableBody>
-           {data?.info?.reverse().map((cer,i) => (
+           {data?.reverse().map((cer,i) => (
              <TableRow key={i}>
                <TableCell className="font-medium">#{cer.crId}</TableCell>
                <TableCell className="font-medium">{cer.candidateGrade=="fail"?<p className="text-red-400">Fail</p>:<p className="text-green-400">Pass</p>}</TableCell>
@@ -60,12 +64,14 @@ const {data}=await getAllcertificate()
        
        </Table>
 
-
+):<p className="text-red-400 font-bold text-center py-4">Connection Error</p>}
 
        </div>
   
     </div>
-  )}
+ 
+
+  </Suspense>
   </>
 
 

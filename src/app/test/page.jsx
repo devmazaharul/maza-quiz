@@ -2,6 +2,7 @@
 import { Anek_Bangla } from "next/font/google";
 
 import Quiz from "./Quiz";
+import { Suspense } from "react";
 
 const tiroBangla = Anek_Bangla({
   style: "normal",
@@ -38,8 +39,12 @@ export default async function page() {
           </p>
         </div>
 
+<div className="text-emerald-500 text-center font-bold">
+<Suspense  fallback="loading...">
+<Quiz/>
 
-    <Quiz/>
+</Suspense>
+</div>
 
 
       </div>

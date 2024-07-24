@@ -67,7 +67,8 @@ export const getAllcertificate=async()=>
 {
     try {
         const responce=await axios.get(site_url+"getcertificates")
-        return {data:responce.data}
+        const info=await responce.data.info;
+        return info
      
     } catch (error) {
         console.log("error")
@@ -87,8 +88,8 @@ export const getcertificateData=async(crId)=>
 
 
 export  const doLogout=async(formData)=>{
- const data=formData.get("action")   
- if(cookies().has("slip") && data=="logout"){
+//  const data=formData.get("action")   
+ if(cookies().has("slip") && formData=="logout"){
     cookies().delete("slip")
     redirect("/admin")
  }
