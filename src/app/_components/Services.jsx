@@ -214,7 +214,7 @@ export default function Services() {
       <div className="mt-12 text-center">
         <Link
           href="/result"
-          className=" flex items-center gap-1 w-fit  mx-auto rounded-full bg-indigo-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-indigo-800 "
+          className=" flex items-center gap-1 w-fit  mx-auto rounded-full bg-emerald-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-emerald-800 "
         >
       Get result <MdOutlineStart/>
         </Link>

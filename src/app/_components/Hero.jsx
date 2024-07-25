@@ -22,7 +22,7 @@ export default function Hero() {
   <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
     <div className="mx-auto max-w-3xl text-center">
       <h1
-        className="bg-gradient-to-r from-indigo-300 via-sky-500 to-pink-500 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl"
+        className="bg-gradient-to-r from-emerald-300 via-sky-500 to-pink-500 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl"
       >
         আপনার দক্ষতা কে যাচাই বাছাই
 
@@ -36,7 +36,7 @@ export default function Hero() {
 
       <div className="mt-8 flex  flex-wrap justify-center gap-4">
         <Link
-          className="  w-fit flex items-center gap-1 rounded-full  bg-indigo-500 px-12 py-3 text-sm font-medium text-white  hover:bg-indigo-700  active:text-opacity-75 sm:w-auto"
+          className="  w-fit flex items-center gap-1 rounded-full  bg-emerald-500 px-12 py-3 text-sm font-medium text-white  hover:bg-emerald-700  active:text-opacity-75 sm:w-auto"
           href="/test"
         >
           Get Test <PiShootingStarThin/>

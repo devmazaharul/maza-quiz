@@ -15,7 +15,7 @@ import { Suspense } from "react"
 
 export async function generateMetadata({ params }) {
   return {
-    title: 'certificates',
+    title: 'Certificates',
     description:"Genarate certificate your exam"
   }
 }

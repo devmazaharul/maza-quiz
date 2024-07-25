@@ -3,6 +3,8 @@ import { Anek_Bangla } from "next/font/google";
 
 import Quiz from "./Quiz";
 import { Suspense } from "react";
+import Signup from "./Signup";
+import { cookies } from "next/headers";
 
 const tiroBangla = Anek_Bangla({
   style: "normal",
@@ -18,7 +20,8 @@ export async function generateMetadata() {
 }
 
 export default async function page() {
- 
+  const getCookie=cookies().get("user")
+
  
 
   return (
@@ -37,11 +40,20 @@ export default async function page() {
             কোর্সটি করার জন্য প্রয়োজনীয় বিষয়গুলো সম্পর্কে আপনার যথেষ্ট ধারণা আছে
             কিনা সেটি যাচাই করে নিন
           </p>
+
+        {getCookie && (
+            <div className="caninfi">
+            <h1 className="text-emerald-500 capitalize w-fit my-3 rounded-md px-4 block mx-auto  ">Candidate name : {getCookie.value} </h1>
+          </div>
+        )}
+
         </div>
 
 <div className="text-emerald-500 text-center font-bold">
 <Suspense  fallback="loading...">
-<Quiz/>
+
+
+{!getCookie ? <Signup/> : <Quiz/>}
 
 </Suspense>
 </div>

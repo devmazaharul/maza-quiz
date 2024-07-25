@@ -86,6 +86,23 @@ export const getcertificateData=async(crId)=>
 }
 
 
+export const getCandidates=async()=>{
+    try {
+        const res=await axios.get(site_url+"getcandidates")
+        if(res.status==200){
+          
+             return res.data
+           
+        }else{
+            return res.data
+        }
+
+    } catch (error) {
+        console.log("something went wrong")
+    }
+}
+
+
 
 export  const doLogout=async(formData)=>{
 //  const data=formData.get("action")   

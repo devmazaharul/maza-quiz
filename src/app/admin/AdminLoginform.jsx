@@ -104,7 +104,7 @@ const handlesubmit=async(e)=>{
           />
           <button
           onClick={() => setOtp(true)}
-          className="bg-indigo-700  outline-none text-emerald-200  px-4 py-1  hover:bg-indigo-800 mx-auto flex items-center gap-1 rounded-md "
+          className="bg-emerald-700  outline-none text-emerald-200  px-4 py-1  hover:bg-emerald-800 mx-auto flex items-center gap-1 rounded-md "
         >
      {loading ? "Entering...":"Enter admin"}
         </button>
@@ -116,7 +116,7 @@ const handlesubmit=async(e)=>{
    {!otp?(
        <button
        onClick={handleSendmail}
-       className="bg-indigo-600 mt-4  outline-none text-gray-200  px-7 py-2 w-[160px] hover:bg-indigo-800 mx-auto flex items-center gap-2 rounded-md "
+       className="bg-emerald-600 mt-4  outline-none text-gray-200  px-7 py-2 w-[160px] hover:bg-emerald-800 mx-auto flex items-center gap-2 rounded-md "
      >
    {loading ?<p className="flex items-center gap-1">Sending<BsRocketTakeoffFill/></p>:<p className="flex items-center gap-1">Send OTP <IoRocketSharp /></p>}  
      </button>
