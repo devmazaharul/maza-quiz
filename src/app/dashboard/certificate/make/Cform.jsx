@@ -12,7 +12,7 @@ export default function Cform() {
     })
 
     const [loading,setLoading]=useState(false)
-    const [error, seterror] = useState(null)
+
     const handleChange=(e,name)=>{
         setinfo({...info,[name]:e.target.value})
     }
@@ -92,10 +92,6 @@ const handleSubmit=async(e)=>{
             <option value="fail">Fail</option>
            </select>
 
-         
-         
-           
-          
             <button className='bg-pink-600 hover:bg-pink-700 my-2 px-8 py-2 rounded-md '>{loading?"Genarating...":"Genarate"}</button>
         </form>
     </>

@@ -42,7 +42,7 @@ const handlePrint=()=>{
 return (
  <>
  
-<Suspense fallback="loading...">
+
 {data ? (
    <div className={`${Sanchez_font.className}`}>
    <div className="mailCr border text-center print:mt-20 print:border-none border-gray-800 px-4 py-6 mt-10 pb-10 mx-auto print:h-[500px]  w-[90%] print:w-[90%] md:w-[60%] rounded-md shadow-md">
@@ -81,7 +81,7 @@ return (
 ):<p className='text-red-400'>Invalid Certificate</p>}
 
 
-</Suspense>
+
  </>
 )
 }
